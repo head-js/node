@@ -1,0 +1,39 @@
+{
+  "name": "@head/node",
+  "version": "0.0.1",
+  "description": "Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup --config rollupfile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/head-js/node.git"
+  },
+  "author": "理斯特<shuaizhexu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/head-js/node/issues"
+  },
+  "homepage": "https://github.com/head-js/node#readme",
+  "devDependencies": {
+    "@babel/core": "7.4.5",
+    "@babel/preset-env": "7.4.5",
+    "@babel/preset-react": "7.0.0",
+    "babel-eslint": "10.0.2",
+    "core-js": "3.1.4",
+    "eslint": "6.1.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "1.7.0",
+    "jest": "25.4.0",
+    "rollup": "1.4.2",
+    "rollup-plugin-babel": "4.3.2",
+    "rollup-plugin-commonjs": "9.3.4",
+    "rollup-plugin-eslint": "5.1.0",
+    "rollup-plugin-node-resolve": "4.2.4"
+  }
+}
