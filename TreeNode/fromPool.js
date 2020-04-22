@@ -40,7 +40,7 @@ function fromPoolId(poolId, parent, level) {
 
 /**
  * @param { pool: List<TreeNode>, from: String, level: Integer }
- * @param { pool: List<TreeNode>, from='root', level=0 } ** sugar
+ * @param { pool: List<TreeNode>, from='$', level=0 } ** sugar
  */
 export default function fromPool(pool, from, level) {
   /* eslint-disable no-param-reassign */
@@ -48,7 +48,7 @@ export default function fromPool(pool, from, level) {
     level = 0;
   }
   if (!from) {
-    from = 'root';
+    from = '$';
   }
   /* eslint-enable no-param-reassign */
 
@@ -56,8 +56,8 @@ export default function fromPool(pool, from, level) {
   pools[poolId] = pool;
 
   let root = null;
-  if ('root' === from) {
-    // NOTE: 约定使用 root 这个命名
+  if ('$' === from) {
+    // NOTE: 约定使用 $ 这个命名
     root = new TreeNode('', '', '', 1); // NOTE: 这里留空是为了 flat 的时候整洁
   } else {
     for (let i = 0; i < pool.length; i += 1) {

@@ -88,7 +88,7 @@ function fromPoolId(poolId, parent, level) {
 }
 /**
  * @param { pool: List<TreeNode>, from: String, level: Integer }
- * @param { pool: List<TreeNode>, from='root', level=0 } ** sugar
+ * @param { pool: List<TreeNode>, from='$', level=0 } ** sugar
  */
 
 
@@ -99,7 +99,7 @@ function fromPool(pool, from, level) {
   }
 
   if (!from) {
-    from = 'root';
+    from = '$';
   }
   /* eslint-enable no-param-reassign */
 
@@ -108,8 +108,8 @@ function fromPool(pool, from, level) {
   pools[poolId] = pool;
   var root = null;
 
-  if ('root' === from) {
-    // NOTE: 约定使用 root 这个命名
+  if ('$' === from) {
+    // NOTE: 约定使用 $ 这个命名
     root = new TreeNode('', '', '', 1); // NOTE: 这里留空是为了 flat 的时候整洁
   } else {
     for (var i = 0; i < pool.length; i += 1) {
@@ -131,6 +131,33 @@ function fromPool(pool, from, level) {
   return root;
 }
 
+/**
+ * @param { pool: List<Org>, ns: String } ** 暂时不支持指定 level
+ */
+
+function fromNs(orgs, ns) {
+  if (!ns) {
+    throw new TypeError('`ns` required');
+  }
+
+  var pool = orgs.map(function (_ref) {
+    var id = _ref.n,
+        parent = _ref.parent,
+        label = _ref.label,
+        order = _ref.order;
+    return {
+      id: id,
+      parent: parent,
+      label: label,
+      order: order
+    };
+  });
+  var root = new TreeNode(ns, '$', '$');
+  pool.unshift(root);
+  return fromPool(pool).children[0];
+}
+
 TreeNode.fromPool = fromPool;
+TreeNode.fromNs = fromNs;
 
 module.exports = TreeNode;

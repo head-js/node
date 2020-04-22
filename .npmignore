@@ -1,0 +1,16 @@
+.DS_Store
+.npmignore
+.gitignore
+
+node_modules/
+
+build/
+example/
+src/
+tests/
+*.test.js
+
+.babelrc
+.editorconfig
+.eslintrc
+rollupfile.js
