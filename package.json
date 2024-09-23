@@ -30,7 +30,7 @@
     "eslint-plugin-react": "7.27.1",
     "eslint-plugin-react-hooks": "4.3.0",
     "jest": "25.4.0",
-    "rollup": "1.12.5",
+    "rollup": "3.29.5",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-eslint": "6.0.0",
